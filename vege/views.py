@@ -7,7 +7,7 @@ from .models import *
 # Create your views here.
 
 def Home(request):
-    return render(request, 'base.html')
+    return redirect('/receipe/')
 
 def handleReceipe(request):
     if request.method == 'GET':
