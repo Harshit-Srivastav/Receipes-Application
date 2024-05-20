@@ -17,15 +17,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from vege.views import *
+from accounts.views import *
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('', Home, name='Home'),
+    path('', home, name='home'),
     path('receipe/', handleReceipe, name='handleReceipe'),
     path('receipe/delete/<id>/', deleteReceipe, name='deleteReceipe'),
     path('receipe/edit/<id>/', editReceipe, name='editReceipe'),
+    path('login/', login_page, name = 'login_page'),
+    path('logout/', logout_page, name = 'logout_page'),
+    path('register/', register, name = 'register'),
+    path('receipe/search/', search_results, name = 'search_results'),
     path('admin/', admin.site.urls),
     
 ]

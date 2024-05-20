@@ -7,7 +7,22 @@
     <title>Receipe</title>
 </head>
 <body>
+    <nav class="navbar bg-body-tertiary p-2">
+        <div class="container-fluid">
+          <a class="navbar-brand">Receipe</a>
+          <form class="d-flex" method="GET" action="/receipe/search">
+            <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            {% if request.user.is_authenticated %}
+            <a href="/logout/" class="mx-2 btn btn-outline-dark ">Logout</a>
+            {% else %}
+            <a href="/login/" class="mx-2 btn btn-outline-dark ">Login</a>
+            {% endif %}
+          </form>
+        </div>
+      </nav>
     <h2 class="text-center text-success  mt-2">Receipes</h2>
+      
     {% block start %}
        
     {% endblock %}
